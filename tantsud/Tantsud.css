@@ -1,0 +1,141 @@
+table {
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    table-layout: fixed;
+}
+
+table caption {
+    font-size: 1.5em;
+    margin: .5em 0 .75em;
+}
+
+table tr {
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    padding: .35em;
+}
+
+table th,
+table td {
+    padding: .625em;
+    text-align: center;
+}
+
+table th {
+    font-size: .85em;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+}
+
+@media screen and (max-width: 600px) {
+    table {
+        border: 0;
+    }
+
+    table caption {
+        font-size: 1.3em;
+    }
+
+    table thead {
+        border: none;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+    }
+
+    table tr {
+        border-bottom: 3px solid #ddd;
+        display: block;
+        margin-bottom: .625em;
+    }
+
+    table td {
+        border-bottom: 1px solid #ddd;
+        display: block;
+        font-size: .8em;
+        text-align: right;
+    }
+
+    table td::before {
+        /*
+        * aria-label has no advantage, it won't be read inside a table
+        content: attr(aria-label);
+        */
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    table td:last-child {
+        border-bottom: 0;
+    }
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/*set a link to give people using screen readers an option to skip the navigation and go directly to the main page content */
+.skip-to-main-content {
+    margin-left: -900px;
+}
+
+/* Fix navigation to create a sticky nav bar */
+nav {
+    position: fixed;
+    margin-top: -20px;
+    width: 100%;
+    background-color: #1a1a1a;
+    padding: 0 25px;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    display-style: none;
+}
+
+nav li {
+    display: inline-block;
+    width: 70px;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+nav li:active {
+    background-color: #333333;
+}
+
+nav li:hover {
+    background-color: #333333;
+}
+
+nav button {
+    display: none;
+}
+
+/* make the nav bar adapt to small screen sizes */
+@media (max-width: 500px) {
+    nav li {
+        display: block;
+        width: 100%;
+        border-bottom: 1px solid white;
+        padding: 5px 0;
+
+    }
+
+    nav {
+        padding: 10px 0 0 0;
+        font-family: "Calibri Light";
+        color: aliceblue;
+    }
+}
